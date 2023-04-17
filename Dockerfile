@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
-RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip source
+RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip
 RUN curl -fsSL https://fnm.vercel.app/install | bash && source /root/.bashrc
 
 RUN mkdir -p /app/models
