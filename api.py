@@ -231,7 +231,7 @@ def update_persona(name):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("/ui/src/index.html")
 
 
 if __name__ == "__main__":
