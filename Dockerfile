@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install node and build angular
 RUN npm install -g @angular/cli
-WORKDIR /app/../..
+WORKDIR /app/ui
 RUN ng build ../template
 
 # Set the working directory to /app
