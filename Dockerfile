@@ -7,8 +7,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
-RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip
-RUN curl -fsSL https://fnm.vercel.app/install | bash && source /root/.bashrc
+RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip nodejs npm
+
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+ apt-get install -y nodejs
 
 RUN mkdir -p /app/models
 
@@ -21,7 +23,6 @@ COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install node and build angular
-RUN fnm install 18.12.1
 RUN npm install -g @angular/cli
 RUN cd ui
 RUN ng build ../template
