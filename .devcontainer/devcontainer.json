@@ -6,6 +6,7 @@
 	
 	"dockerComposeFile": "../docker-compose.yaml", 
 	"service": "alpaca",
+	"workspaceFolder": "workspaces/Alpaca-Turbo",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
