@@ -5,7 +5,8 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	
 	"dockerComposeFile": "../docker-compose.yaml", 
-	"service": "alpaca"
+	"service": "alpaca", 
+	"workspaceFolder": "../workspaces/AlpacaDevContainer"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
