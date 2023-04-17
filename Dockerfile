@@ -1,11 +1,11 @@
 FROM python:3.8-slim
 
+RUN curl -fsSL https://fnm.vercel.app/install | bash && source /root/.bashrc
 
 # Install pip, cmake and python
 RUN apt-get update && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
-
 
 RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip
 
@@ -20,8 +20,6 @@ COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install node and build angular
-RUN curl -fsSL https://fnm.vercel.app/install | bash
-RUN source /root/.bashrc
 RUN fnm install 18.12.1
 RUN npm install -g @angular/cli
 RUN cd ui
