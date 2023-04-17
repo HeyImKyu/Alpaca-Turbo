@@ -1,13 +1,14 @@
 FROM python:3.8-slim
 
-RUN curl -fsSL https://fnm.vercel.app/install | bash && source /root/.bashrc
+
 
 # Install pip, cmake and python
 RUN apt-get update && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
-RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip
+RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip source
+RUN curl -fsSL https://fnm.vercel.app/install | bash && source /root/.bashrc
 
 RUN mkdir -p /app/models
 
