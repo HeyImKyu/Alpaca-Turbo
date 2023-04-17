@@ -10,6 +10,7 @@ https;//github.comViperX7/Alpaca-Turbo
 """
 import mimetypes
 import psutil
+import os
 from alpaca_turbo import Assistant
 from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
