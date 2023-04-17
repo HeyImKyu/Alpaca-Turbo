@@ -21,6 +21,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install node and build angular
 RUN curl -fsSL https://fnm.vercel.app/install | bash
+RUN source /root/.bashrc
 RUN fnm install 18.12.1
 RUN npm install -g @angular/cli
 RUN cd ui
