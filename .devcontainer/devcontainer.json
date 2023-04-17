@@ -4,7 +4,7 @@
 	"name": "AgentGPT development container",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	
-	"dockerComposeFile": "docker-compose.yaml", 
+	"dockerComposeFile": "../docker-compose.yaml", 
 	"service": "alpaca"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
