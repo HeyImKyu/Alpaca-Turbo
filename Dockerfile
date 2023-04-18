@@ -17,6 +17,9 @@ RUN git clone https://github.com/ViperX7/llama.cpp /workspaces/Alpaca-Turbo/llam
 RUN cd /workspaces/Alpaca-Turbo/llama.cpp && make
 # RUN mv ./main /workspaces/Alpaca-Turbo/main
 
+RUN ls /workspaces
+RUN ls /workspaces/Alpaca-Turbo
+
 COPY ./requirements.txt /workspaces
 # COPY ./main /
 RUN pip install --no-cache-dir -r /workspaces/requirements.txt
