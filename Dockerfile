@@ -11,17 +11,15 @@ RUN apt-get update && \
 
 RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip nodejs npm
 
-WORKDIR /workspaces/Alpaca-Turbo
-
 RUN mkdir -p /workspaces/Alpaca-Turbo/models
 
 RUN git clone https://github.com/ViperX7/llama.cpp /workspaces/Alpaca-Turbo/llama.cpp
 RUN cd /workspaces/Alpaca-Turbo/llama.cpp && make
 # RUN mv ./main /workspaces/Alpaca-Turbo/main
 
-#COPY ./requirements.txt /app/
+COPY ./requirements.txt /workspaces
 # COPY ./main /
-RUN pip install --no-cache-dir -r /workspaces/Alpaca-Turbo/requirements.txt
+RUN pip install --no-cache-dir -r /workspaces/requirements.txt
 
 # Install node and build angular
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
