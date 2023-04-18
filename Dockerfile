@@ -1,8 +1,5 @@
 FROM python:3.8-slim
 
-RUN ls /
-RUN ls /app
-RUN ls /app/ui
 
 RUN apt-get autoremove
 RUN apt-get clean
@@ -24,6 +21,10 @@ RUN mv /llama.cpp/main /main
 COPY ./requirements.txt /app/
 # COPY ./main /
 RUN pip install --no-cache-dir -r /app/requirements.txt
+
+RUN ls /
+RUN ls /app
+RUN ls /app/ui
 
 # Install node and build angular
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
