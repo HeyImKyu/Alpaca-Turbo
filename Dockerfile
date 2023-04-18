@@ -28,3 +28,5 @@ RUN pip install --no-cache-dir -r /workspaces/requirements.txt
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
  apt-get install -y nodejs
 RUN npm install -g @angular/cli
+
+CMD python3 /workspaces/Alpaca-Turbo/api.py
