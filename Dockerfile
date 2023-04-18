@@ -29,7 +29,7 @@ RUN npm install -g @angular/cli
 WORKDIR /app/ui
 RUN npm install
 RUN ng build --output-path ./template
-COPY ./template /app/template
+RUN mv ./template /app/template
 
 # Set the working directory to /app
 WORKDIR /app
