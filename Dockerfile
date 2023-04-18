@@ -29,6 +29,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
  apt-get install -y nodejs
 RUN npm install -g @angular/cli
 
-RUN ls /app
+RUN ls .
 
-CMD python3 /app/api.py
+CMD python3 ./api.py
