@@ -4,7 +4,7 @@ RUN apt-get autoremove
 RUN apt-get clean
 
 # Install pip, cmake and python
-RUN apt-get update --no-cache && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
