@@ -11,12 +11,13 @@ RUN apt-get update && \
 
 RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip nodejs npm
 
+WORKDIR /workspaces/Alpaca-Turbo
 
-RUN mkdir -p /workspaces/Alpaca-Turbo/models
+RUN mkdir -p ./models
 
-RUN git clone https://github.com/ViperX7/llama.cpp /llama.cpp
-RUN cd /llama.cpp && make
-RUN mv /llama.cpp/main /main
+RUN git clone https://github.com/ViperX7/llama.cpp ./llama.cpp
+RUN cd ./llama.cpp && make
+RUN mv ./main ../main
 
 #COPY ./requirements.txt /app/
 # COPY ./main /
