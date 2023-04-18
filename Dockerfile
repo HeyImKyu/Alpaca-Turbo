@@ -1,13 +1,12 @@
 FROM python:3.8-slim
 
-
 # Install pip, cmake and python
-RUN apt-get update && \
+RUN apt-get update --no-cache && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
+RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip nodejs npm
 
-RUN apt-get install -y --no-install-recommends curl wget vim git gcc make libc6-dev g++ unzip
 
 RUN mkdir -p /app/models
 
@@ -20,12 +19,14 @@ COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install node and build angular
-RUN curl -fsSL https://fnm.vercel.app/install | bash
-RUN source /root/.bashrc
-RUN fnm install 18.12.1
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+ apt-get install -y nodejs
 RUN npm install -g @angular/cli
-RUN cd ui
-RUN ng build ../template
+
+WORKDIR /app/ui
+RUN npm install
+RUN ng build --output-path ./template
+COPY ./template /app/template
 
 # Set the working directory to /app
 WORKDIR /app
