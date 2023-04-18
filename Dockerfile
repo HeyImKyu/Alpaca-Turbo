@@ -28,13 +28,3 @@ RUN pip install --no-cache-dir -r /workspaces/requirements.txt
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
  apt-get install -y nodejs
 RUN npm install -g @angular/cli
-
-WORKDIR /workspaces/Alpaca-Turbo/ui
-RUN npm install
-RUN ng build --output-path /workspaces/Alpaca-Turbo/template
-
-# Set the working directory to /app
-WORKDIR /workspaces/Alpaca-Turbo
-
-# Start the webui.py file when the container is started
-CMD python3 /workspaces/Alpaca-Turbo/api.py
