@@ -21,7 +21,7 @@ RUN ls /var/lib/docker/codespacemount/workspaces/Alpaca-Turbo
 
 COPY ./requirements.txt /workspaces
 # COPY ./main /
-RUN pip install --no-cache-dir -r /workspaces/requirements.txt
+RUN pip install --no-cache-dir -r /var/lib/docker/codespacemount/workspaces/Alpaca-Turbo/requirements.txt
 
 # Install node and build angular
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
