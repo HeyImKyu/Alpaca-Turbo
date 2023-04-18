@@ -1,7 +1,7 @@
 FROM python:3.8-slim
 
 # Install pip, cmake and python
-RUN apt-get update && \
+RUN apt-get update --no-cache && \
     apt-get install -y --no-install-recommends cmake && \
     apt-get clean
 
