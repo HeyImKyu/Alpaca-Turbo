@@ -1,5 +1,9 @@
 FROM python:3.8-slim
 
+RUN ls /
+RUN ls /app
+RUN ls /app/ui
+
 RUN apt-get autoremove
 RUN apt-get clean
 
