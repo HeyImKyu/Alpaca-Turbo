@@ -17,7 +17,7 @@ RUN mkdir -p /workspaces/Alpaca-Turbo/models
 
 RUN git clone https://github.com/ViperX7/llama.cpp /workspaces/Alpaca-Turbo/llama.cpp
 RUN cd /workspaces/Alpaca-Turbo/llama.cpp && make
-RUN mv ./main /workspaces/Alpaca-Turbo/main
+# RUN mv ./main /workspaces/Alpaca-Turbo/main
 
 #COPY ./requirements.txt /app/
 # COPY ./main /
