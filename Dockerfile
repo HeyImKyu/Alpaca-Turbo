@@ -1,5 +1,8 @@
 FROM python:3.8-slim
 
+RUN apt-get autoremove
+RUN apt-get clean
+
 # Install pip, cmake and python
 RUN apt-get update --no-cache && \
     apt-get install -y --no-install-recommends cmake && \
