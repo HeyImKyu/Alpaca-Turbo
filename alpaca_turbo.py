@@ -156,6 +156,7 @@ class Assistant:
         #     return "Android"
         # else:
         #     exit()
+        print(name)
         return name
 
     @property
